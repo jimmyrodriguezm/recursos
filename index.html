@@ -33,7 +33,7 @@
     /* HEADER */
     header {
       background: var(--yellow);
-      padding: 3rem 2rem 0;
+      padding: 3rem 2rem 2.5rem;
       position: relative;
     }
 
@@ -60,31 +60,11 @@
       animation: fadeDown 0.7s ease both;
     }
 
-    .label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--green);
-      margin-bottom: 1rem;
-    }
-
     h1 {
       font-size: clamp(2.4rem, 6vw, 4rem);
       font-weight: 900;
       line-height: 1.05;
       color: var(--dark);
-      margin-bottom: 1rem;
-    }
-
-    .subtitle {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--dark);
-      max-width: 500px;
-      line-height: 1.7;
-      opacity: 0.72;
-      padding-bottom: 2.5rem;
     }
 
     /* WAVE */
@@ -240,7 +220,7 @@
     .card:nth-child(3) { animation-delay: 0.25s; }
 
     @media (max-width: 500px) {
-      header { padding: 2rem 1.2rem 0; }
+      header { padding: 2rem 1.2rem 2rem; }
       .section { padding: 2.5rem 1.2rem 4rem; }
     }
   </style>
@@ -250,9 +230,7 @@
   <header>
     <a class="logo" href="/recursos"><img src="Isotipo_jimmy-100.jpg" alt="Jimmy Rodríguez"/></a>
     <div class="header-inner">
-      <p class="label">jimmyrodriguez.com · Recursos gratuitos</p>
       <h1>Recursos de<br>Jimmy Rodríguez</h1>
-      <p class="subtitle">Herramientas, calculadoras y recursos prácticos para dueños de negocio. Nuevos recursos cada semana.</p>
     </div>
   </header>
 
