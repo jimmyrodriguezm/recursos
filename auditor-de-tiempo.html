@@ -46,7 +46,7 @@
     .nav-back { font-size: 0.78rem; font-weight: 500; color: var(--dark); opacity: 0.45; text-decoration: none; letter-spacing: 0.04em; }
     .nav-back:hover { opacity: 0.8; }
 
-    .wrapper { max-width: 680px; margin: 0 auto; padding: 2rem 1.5rem 6rem; position: relative; z-index: 1; }
+    .wrapper { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem 6rem; position: relative; z-index: 1; }
 
     .step { display: none; animation: fadeUp 0.5s ease both; }
     .step.active { display: block; }
@@ -61,7 +61,6 @@
       font-size: clamp(1.8rem, 5vw, 3rem);
       font-weight: 900; line-height: 1.1; margin-bottom: 0.6rem;
     }
-
     .sub { font-size: 0.9rem; color: var(--dark); opacity: 0.5; line-height: 1.6; margin-bottom: 2rem; max-width: 420px; }
 
     .field { margin-bottom: 1.4rem; }
@@ -96,7 +95,6 @@
     .btn-ghost { background: transparent; border: 1.5px solid rgba(0,0,0,0.15); color: var(--dark); opacity: 0.6; }
     .btn-row { display: flex; gap: 0.8rem; flex-wrap: wrap; margin-top: 1rem; }
 
-    /* ACTIVIDAD CARD CON COLOR */
     .actividad-card {
       background: rgba(255,255,255,0.6); backdrop-filter: blur(8px);
       border: 1px solid rgba(0,0,0,0.08);
@@ -111,41 +109,89 @@
     .actividad-card button { background: none; border: none; cursor: pointer; font-size: 1rem; opacity: 0.3; transition: opacity 0.2s; }
     .actividad-card button:hover { opacity: 0.8; }
 
+    /* RESULTADO LAYOUT */
+    .resultado-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      align-items: start;
+      margin-bottom: 1.2rem;
+    }
+
     /* CUADRO */
-    .grid-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; margin-bottom: 0.3rem; }
-    .grid-sub { font-size: 0.85rem; opacity: 0.45; margin-bottom: 1.6rem; }
-    .cuadro-wrap { margin-bottom: 2rem; }
-    .cuadro { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; width: 100%; max-width: 340px; }
+    .cuadro { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; width: 100%; }
     .celda { aspect-ratio: 1; border-radius: 4px; background: rgba(0,0,0,0.08); transition: background 0.3s; }
 
-    /* LEYENDA DINÁMICA */
-    .leyenda { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
-    .leyenda-item { display: flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; opacity: 0.7; }
-    .leyenda-dot { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+    .leyenda { display: flex; gap: 0.6rem; margin-top: 0.8rem; flex-wrap: wrap; }
+    .leyenda-item { display: flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; opacity: 0.65; }
+    .leyenda-dot { width: 10px; height: 10px; border-radius: 3px; flex-shrink: 0; }
 
-    /* RESULTADO */
-    .resultado {
+    /* PANEL CARD */
+    .panel {
       background: rgba(255,255,255,0.7); backdrop-filter: blur(12px);
-      border: 1px solid rgba(0,0,0,0.08); border-radius: 20px; padding: 1.6rem; margin-top: 2rem;
+      border: 1px solid rgba(0,0,0,0.07); border-radius: 20px; padding: 1.4rem;
     }
-    .resultado h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 1rem; }
-    .stat-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 0.6rem 0; border-bottom: 1px solid rgba(0,0,0,0.06); font-size: 0.88rem;
+
+    .panel-title {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; opacity: 0.35; margin-bottom: 1rem;
     }
-    .stat-row:last-child { border-bottom: none; }
-    .stat-label-wrap { display: flex; align-items: center; gap: 0.5rem; }
-    .stat-color-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
-    .stat-label { opacity: 0.55; }
-    .stat-val { font-weight: 700; font-size: 1rem; }
-    .stat-val.highlight { color: var(--green); font-size: 1.2rem; }
-    .stat-val.warn { color: #e05252; }
+
+    /* ACTIVIDADES PANEL */
+    .act-row {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.5rem 0; border-bottom: 1px solid rgba(0,0,0,0.05);
+      font-size: 0.85rem;
+    }
+    .act-row:last-child { border-bottom: none; }
+    .act-row-left { display: flex; align-items: center; gap: 0.5rem; }
+    .act-dot-sm { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .act-nombre { font-weight: 500; }
+    .act-tiempo { font-weight: 700; font-size: 0.82rem; opacity: 0.6; }
+
+    /* DIAGNÓSTICO */
+    .diagnostico-full {
+      background: rgba(255,255,255,0.7); backdrop-filter: blur(12px);
+      border: 1px solid rgba(0,0,0,0.07); border-radius: 20px; padding: 1.6rem;
+    }
+
+    .diag-creencia {
+      font-size: 0.88rem; opacity: 0.5; line-height: 1.6;
+      padding-bottom: 1.2rem; border-bottom: 1px solid rgba(0,0,0,0.07);
+      margin-bottom: 1.2rem;
+    }
+    .diag-creencia strong { opacity: 1; color: var(--dark); font-weight: 700; }
+
+    .diag-resultado-label {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; opacity: 0.35; margin-bottom: 0.8rem;
+    }
+
+    .diag-resultado-texto {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      font-weight: 700; line-height: 1.35;
+      color: var(--dark); margin-bottom: 1rem;
+    }
+
+    .diag-diferencia {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--dark); color: var(--yellow);
+      border-radius: 12px; padding: 0.7rem 1.1rem;
+      font-size: 0.88rem; font-weight: 700; line-height: 1.4;
+    }
+    .diag-diferencia.positivo { background: var(--green); color: #fff; }
+    .diag-diferencia.negativo { background: #e05252; color: #fff; }
+
+    .grid-title { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900; margin-bottom: 0.3rem; }
+    .grid-sub { font-size: 0.82rem; opacity: 0.4; margin-bottom: 1.4rem; }
 
     .cta-box { margin-top: 1.4rem; text-align: center; font-size: 0.82rem; opacity: 0.45; line-height: 1.6; }
     .cta-box a { color: var(--dark); font-weight: 600; }
 
-    @media (max-width: 480px) {
-      .cuadro { max-width: 100%; gap: 3px; }
+    @media (max-width: 600px) {
+      .resultado-layout { grid-template-columns: 1fr; }
+      .wrapper { padding: 1.5rem 1.2rem 5rem; }
     }
   </style>
 </head>
@@ -227,15 +273,33 @@
   <!-- STEP 4: resultado -->
   <div class="step" id="step-4">
     <p class="grid-title">Tu día real.</p>
-    <p class="grid-sub">Cada cuadro = 10 minutos de tu día (1,000 min ≈ 16.6 hrs despierto)</p>
-    <div class="cuadro-wrap">
-      <div class="cuadro" id="cuadro"></div>
-      <div class="leyenda" id="leyenda"></div>
+    <p class="grid-sub">Cada cuadro = 10 minutos · 100 cuadros = 1,000 min ≈ 16.6 hrs despierto</p>
+
+    <!-- CUADRO + ACTIVIDADES LADO A LADO -->
+    <div class="resultado-layout">
+
+      <!-- IZQUIERDA: cuadro -->
+      <div>
+        <div class="cuadro" id="cuadro"></div>
+        <div class="leyenda" id="leyenda"></div>
+      </div>
+
+      <!-- DERECHA: actividades -->
+      <div class="panel">
+        <p class="panel-title">Cómo usas tu tiempo</p>
+        <div id="act-panel"></div>
+      </div>
+
     </div>
-    <div class="resultado">
-      <h3>Tu auditoría</h3>
-      <div id="stats-lista"></div>
+
+    <!-- DIAGNÓSTICO COMPLETO -->
+    <div class="diagnostico-full">
+      <div class="diag-creencia" id="diag-creencia"></div>
+      <p class="diag-resultado-label">Resultado real</p>
+      <p class="diag-resultado-texto" id="diag-resultado"></p>
+      <div class="diag-diferencia" id="diag-diferencia"></div>
     </div>
+
     <div class="cta-box">
       ¿Quieres más herramientas como esta?<br>
       <a href="index.html">Ver todos los recursos →</a>
@@ -248,22 +312,25 @@
   let unidadActual = 'minutos';
   let actividades = [];
 
-  // Paleta de colores para categorías
   const COLORES = [
-    '#ef6c3a', // alistarse — naranja
-    '#8b5cf6', // transporte — violeta
-    '#0c754f', // trabajo — verde
-    '#e05252', // extra 1 — rojo
-    '#2563eb', // extra 2 — azul
-    '#f59e0b', // extra 3 — ámbar
-    '#ec4899', // extra 4 — rosa
-    '#14b8a6', // extra 5 — teal
-    '#6366f1', // extra 6 — índigo
-    '#84cc16', // extra 7 — lima
+    '#ef6c3a',
+    '#8b5cf6',
+    '#0c754f',
+    '#e05252',
+    '#2563eb',
+    '#f59e0b',
+    '#ec4899',
+    '#14b8a6',
+    '#6366f1',
+    '#84cc16',
   ];
-
   const COLOR_LIBRE = '#efdd3a';
   const COLOR_VACIO = 'rgba(0,0,0,0.08)';
+
+  function fmt(mins) {
+    if (mins >= 60) return (mins / 60 % 1 === 0 ? mins/60 : (mins/60).toFixed(1)) + ' hrs';
+    return mins + ' min';
+  }
 
   function irA(n) {
     if (n === 2) {
@@ -323,69 +390,83 @@
   }
 
   function auditar() {
-    const creencia = parseFloat(document.getElementById('horas-creencia').value) * 60;
-    const alistarse = parseFloat(document.getElementById('alistarse').value) || 0;
+    const creenciaMins = parseFloat(document.getElementById('horas-creencia').value) * 60;
+    const alistarse  = parseFloat(document.getElementById('alistarse').value)  || 0;
     const transporte = parseFloat(document.getElementById('transporte').value) || 0;
-    const trabajo = (parseFloat(document.getElementById('trabajo').value) || 0) * 60;
+    const trabajo    = (parseFloat(document.getElementById('trabajo').value)   || 0) * 60;
     const extrasTotal = actividades.reduce((s, a) => s + a.mins, 0);
     const totalOcupado = alistarse + transporte + trabajo + extrasTotal;
     const totalDia = 1000;
     const libre = Math.max(0, totalDia - totalOcupado);
-    const libreHorasSemana = ((libre * 5) / 60).toFixed(1);
 
-    // Categorías con colores
+    const libreHrsDay  = (libre / 60).toFixed(1);
+    const libreHrsWeek = ((libre * 5) / 60).toFixed(1);
+    const creenciaHrs  = (creenciaMins / 60).toFixed(1);
+    const creenciaWeek = ((creenciaMins * 5) / 60).toFixed(1);
+    const diffWeek     = ((libre - creenciaMins) * 5 / 60);
+    const diffWeekAbs  = Math.abs(diffWeek).toFixed(1);
+
     const categorias = [
-      { nombre: 'Alistarte',   mins: alistarse,  color: COLORES[0] },
-      { nombre: 'Transporte',  mins: transporte,  color: COLORES[1] },
-      { nombre: 'Trabajo',     mins: trabajo,     color: COLORES[2] },
+      { nombre: 'Alistarte',    mins: alistarse,  color: COLORES[0] },
+      { nombre: 'Transporte',   mins: transporte,  color: COLORES[1] },
+      { nombre: 'Trabajo',      mins: trabajo,     color: COLORES[2] },
       ...actividades.map((a, i) => ({ nombre: a.nombre, mins: a.mins, color: COLORES[3 + i] || '#999' })),
-      { nombre: 'Tiempo libre', mins: libre,      color: COLOR_LIBRE },
+      { nombre: 'Tiempo libre', mins: libre,       color: COLOR_LIBRE },
     ];
 
     irA(4);
     setTimeout(() => renderCuadro(categorias, totalDia), 100);
 
     // Leyenda
-    const leyenda = document.getElementById('leyenda');
-    leyenda.innerHTML = categorias.map(c => `
+    document.getElementById('leyenda').innerHTML = categorias.map(c => `
       <div class="leyenda-item">
         <div class="leyenda-dot" style="background:${c.color}"></div>
         ${c.nombre}
       </div>
     `).join('') + `
       <div class="leyenda-item">
-        <div class="leyenda-dot" style="background:${COLOR_VACIO}; border:1px solid rgba(0,0,0,0.15)"></div>
+        <div class="leyenda-dot" style="background:${COLOR_VACIO}; border:1px solid rgba(0,0,0,0.12)"></div>
         Sin asignar
       </div>
     `;
 
-    // Stats
-    const stats = document.getElementById('stats-lista');
-    const diffMins = libre - creencia;
-    const diffHrs = (Math.abs(diffMins) / 60).toFixed(1);
-    const diffText = diffMins < 0
-      ? `<span class="stat-val warn">−${diffHrs} hrs menos de lo que creías</span>`
-      : `<span class="stat-val highlight">+${diffHrs} hrs más de lo que creías</span>`;
-
-    const rows = [
-      ...categorias.slice(0, -1).map(c => ({
-        label: c.nombre, val: c.mins >= 60 ? (c.mins/60).toFixed(1)+' hrs' : c.mins+' min', color: c.color
-      })),
-      { label: 'Total ocupado', val: (totalOcupado/60).toFixed(1)+' hrs', color: null },
-      { label: 'Tiempo libre real hoy', val: `<span class="stat-val highlight">${(libre/60).toFixed(1)} hrs (${libre} min)</span>`, color: COLOR_LIBRE },
-      { label: 'Si tu día típico se mantiene', val: `<span class="stat-val highlight">${libreHorasSemana} hrs libres a la semana</span>`, color: null },
-      { label: 'Vs. lo que creías', val: diffText, color: null },
-    ];
-
-    stats.innerHTML = rows.map(r => `
-      <div class="stat-row">
-        <div class="stat-label-wrap">
-          ${r.color ? `<div class="stat-color-dot" style="background:${r.color}"></div>` : '<div style="width:9px"></div>'}
-          <span class="stat-label">${r.label}</span>
+    // Panel actividades (derecha)
+    document.getElementById('act-panel').innerHTML = categorias.slice(0, -1).map(c => `
+      <div class="act-row">
+        <div class="act-row-left">
+          <div class="act-dot-sm" style="background:${c.color}"></div>
+          <span class="act-nombre">${c.nombre}</span>
         </div>
-        <span>${r.val}</span>
+        <span class="act-tiempo">${fmt(c.mins)}</span>
       </div>
-    `).join('');
+    `).join('') + `
+      <div class="act-row" style="margin-top:0.6rem; padding-top:0.8rem; border-top: 1.5px solid rgba(0,0,0,0.08); border-bottom:none;">
+        <div class="act-row-left">
+          <div class="act-dot-sm" style="background:${COLOR_LIBRE}"></div>
+          <span class="act-nombre" style="font-weight:700">Tiempo libre</span>
+        </div>
+        <span class="act-tiempo" style="font-weight:800; opacity:1; font-size:0.9rem">${fmt(libre)}</span>
+      </div>
+    `;
+
+    // Diagnóstico
+    document.getElementById('diag-creencia').innerHTML =
+      `Pensabas que tenías <strong>${creenciaHrs} hrs libres al día</strong> y de lunes a viernes <strong>${creenciaWeek} horas</strong>.`;
+
+    document.getElementById('diag-resultado').innerHTML =
+      `Al día tienes disponibles <strong>${libreHrsDay} horas</strong>, de lunes a viernes <strong>${libreHrsWeek} horas</strong>.`;
+
+    const difEl = document.getElementById('diag-diferencia');
+    if (diffWeek > 0) {
+      difEl.className = 'diag-diferencia positivo';
+      difEl.innerHTML = `✦ Eso son ${diffWeekAbs} horas más a la semana que puedes usar mejor.`;
+    } else if (diffWeek < 0) {
+      difEl.className = 'diag-diferencia negativo';
+      difEl.innerHTML = `✦ Eso son ${diffWeekAbs} horas menos de las que creías tener.`;
+    } else {
+      difEl.className = 'diag-diferencia';
+      difEl.innerHTML = `✦ Tu estimación fue exacta.`;
+    }
   }
 
   function renderCuadro(categorias, total) {
@@ -394,7 +475,6 @@
     const celdas = 100;
     const minsPorCelda = total / celdas;
 
-    // Crear todas las celdas vacías
     for (let i = 0; i < celdas; i++) {
       const c = document.createElement('div');
       c.className = 'celda';
@@ -402,8 +482,6 @@
     }
 
     const celdaEls = cuadro.querySelectorAll('.celda');
-
-    // Construir secuencia de colores celda por celda
     const secuencia = [];
     categorias.forEach(cat => {
       const n = Math.round(cat.mins / minsPorCelda);
@@ -412,7 +490,6 @@
       }
     });
 
-    // Animación progresiva
     let idx = 0;
     function fillNext() {
       if (idx < secuencia.length && idx < celdas) {
